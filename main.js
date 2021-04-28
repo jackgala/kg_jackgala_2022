@@ -6,12 +6,17 @@ let numbers = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'E
 let converted_string = undefined;
 
 // function conversion
+function convert(){
 
-//  initialize string input
-
-//read in command prompt string into input
-
-//for the length of input
+//for the numbers in the string input
+process.argv.slice(2).forEach((val) => {
+    //for each character in the string
+    for(let x = 0; x < val.length; x++){
+        //test to see if the right values are returned
+        console.log(val[x]);
+    }
+    console.log(',');
+})
 //get supstring of input by character
 //if it's a space
 //add a comma to converted_string
@@ -20,5 +25,7 @@ let converted_string = undefined;
 
 //print out the converted_string
 
+}
 
+convert();
 
