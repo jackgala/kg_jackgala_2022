@@ -12,8 +12,6 @@ function convert(){
 process.argv.slice(2).forEach((val) => {
     //for each character in the string
     for(let x = 0; x < val.length; x++){
-        //test to see if the right values are returned
-        console.log(val[x]);
         //add the string from a array of strings at index [ascii value - ascii value of '0']
         if(val[x].charCodeAt(0) < 58 && val[x].charCodeAt(0) > 47 ){
             converted_string += numbers[val[x].charCodeAt(0) - 48]
@@ -22,11 +20,10 @@ process.argv.slice(2).forEach((val) => {
     //if it's a space
     //add a comma to converted_string
     converted_string += ','
-    console.log(converted_string);
 
-})
+});
 //print out the converted_string
-
+console.log(converted_string)
 }
 
 convert();
