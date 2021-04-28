@@ -3,26 +3,28 @@
 // array of strings
 let numbers = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
 // converted_string string
-let converted_string = undefined;
+let converted_string = '';
 
 // function conversion
 function convert(){
 
-//for the numbers in the string input
+//get supstring of input by character
 process.argv.slice(2).forEach((val) => {
     //for each character in the string
     for(let x = 0; x < val.length; x++){
         //test to see if the right values are returned
         console.log(val[x]);
+        //add the string from a array of strings at index [ascii value - ascii value of '0']
+        if(val[x].charCodeAt(0) < 58 && val[x].charCodeAt(0) > 47 ){
+            converted_string += numbers[val[x].charCodeAt(0) - 48]
+        }
     }
-    console.log(',');
-})
-//get supstring of input by character
-//if it's a space
-//add a comma to converted_string
-//if it's a number(use ascii keys to verify)
-//add the string from a array of strings at index [ascii value - ascii value of '0']
+    //if it's a space
+    //add a comma to converted_string
+    converted_string += ','
+    console.log(converted_string);
 
+})
 //print out the converted_string
 
 }
